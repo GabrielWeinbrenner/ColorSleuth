@@ -18,18 +18,26 @@ class App extends React.Component{
             return {background: color}
         }
     }
-    handleUserScore = () => {
+    handleUserScore = (increment) => {
         if(this.state.currentUser === 0){
-            var newScore = this.state.userOneScore+1;
+            var newScore = increment ? this.state.userOneScore+1: this.state.userOneScore-1;
             this.setState({
+                currentColor: {background: `rgba(${Math.random()*Math.floor(255)},
+                ${Math.random()*Math.floor(255)},
+                ${Math.random()*Math.floor(255)})`},
+
                 userOneScore: newScore,
                 randomCardId: Math.round(Math.random()*Math.floor(4)),
                 currentUser: 1
             });          
         }else{
-            var newScore = this.state.userOneScore+1;
+            var newScore = increment ? this.state.userTwoScore+1: this.state.userTwoScore-1;
             this.setState({
-                userOneScore: newScore,
+                currentColor: {background: `rgba(${Math.random()*Math.floor(255)},
+                ${Math.random()*Math.floor(255)},
+                ${Math.random()*Math.floor(255)})`},
+
+                userTwoScore: newScore,
                 randomCardId: Math.round(Math.random()*Math.floor(4)),
                 currentUser: 0
             });     

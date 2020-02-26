@@ -4,7 +4,10 @@ class Userscore extends React.Component{
     render(){
         return(
             <div className="user-score">
-                User Score: {this.props.userscore}
+                <h3 className="title-score">User Score:</h3>
+                <h4 className="individual-score">
+                {this.props.userscore}
+                </h4>
             </div>
         );
     }

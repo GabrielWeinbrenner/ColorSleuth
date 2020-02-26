@@ -29,9 +29,12 @@
     <style>
       *{
         font-family: 'Fugaz One', sans-serif ;
+        background-color: wheat;
       }
       h1{
         margin-top: 100px;
+        animation-name: moveInRight;
+        animation-duration: 1.5s;
       }
       .cards{
         position: absolute;
@@ -48,6 +51,9 @@
         border-radius: 10%;
         margin: 8px;
       }
+      .card:hover{
+        transform:translateY(-2%);
+      }
       #three{
         clear: left;
       }
@@ -59,6 +65,53 @@
         display:inline-block;
         border-radius: 10%;
       }
+      .title-score{
+        animation: moveUp 1.5s;
+      }
+      .individual-score{
+        animation-name: moveInLeft;
+        animation-duration: 1.5s;
+        height: 10px;
+        margin-bottom: 2px;
+      }
+      @keyframes moveUp{
+        0%{
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        100%{
+          opacity: 1;
+          transform: translateY(0);
+
+        }
+      }
+      @keyframes moveInLeft{
+          0%{
+              opacity: 0;
+              transform: translateX(-100px);
+          }
+          80%{
+              transform: translateX(20px);
+          }
+          100%{
+              opacity: 1;
+              transform: translateX(0);
+          }
+      }
+      @keyframes moveInRight{
+          0%{
+              opacity: 0;
+              transform: translateX(100px);
+          }
+          80%{
+              transform: translateX(-20px);
+          }
+          100%{
+              opacity: 1;
+              trasnform: translateX(0);
+          }
+      }
+
     </style>
   </head>
   <body>
