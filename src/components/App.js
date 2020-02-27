@@ -53,8 +53,8 @@ class App extends React.Component{
                     <Card id="3" changeUserScore = {this.handleUserScore} rand = {this.state.randomCardId} color={this.checkColorId(3)}/>
                     <Card id="4" changeUserScore = {this.handleUserScore} rand = {this.state.randomCardId} color={this.checkColorId(4)}/>
                     <div className="scores">
-                        <Userscore userscore={this.state.userOneScore}/>
-                        <Userscore userscore={this.state.userTwoScore}/>
+                        <Userscore id="1" userscore={this.state.userOneScore}/>
+                        <Userscore id="2" userscore={this.state.userTwoScore}/>
                     </div>
                 </div>
             </div>
