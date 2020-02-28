@@ -45,6 +45,13 @@ class App extends React.Component{
             });     
         }
     }
+    resetGame = () => {
+        this.setState({
+            userOneScore: 0,
+            userTwoScore: 0,
+            currentUser: 0
+        })
+    }
     renderWin = () => {
         var currentWinner = this.state.userOneScore > this.state.userTwoScore ? "User One" : "User Two";
         return(
@@ -55,6 +62,7 @@ class App extends React.Component{
                 <h1 className="congrats">
                     Congratualations {currentWinner}!!
                 </h1>
+                <button className="reset" onClick={this.resetGame}> New Game? </button>
             </div>
         )
     }
