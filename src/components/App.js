@@ -54,6 +54,8 @@ class App extends React.Component{
     }
     renderWin = () => {
         var currentWinner = this.state.userOneScore > this.state.userTwoScore ? "User One" : "User Two";
+        var currentLoser = this.state.userOneScore > this.state.userTwoScore ? "User Two" : "User One";
+        var points = Math.abs(this.state.userOneScore - this.state.userTwoScore) 
         return(
             <div>
                 <div className="crown">
@@ -62,6 +64,11 @@ class App extends React.Component{
                 <h1 className="congrats">
                     Congratualations {currentWinner}!!
                 </h1>
+                <h2 className="points-beat">
+                    You have beat {currentLoser} by 
+                    {" " + points + " "} 
+                    {points===1 ? "point" : "points"}
+                </h2>
                 <button className="reset" onClick={this.resetGame}> New Game? </button>
             </div>
         )
